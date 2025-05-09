@@ -8,6 +8,7 @@ import { decrypt, encrypt } from './lib/crypto';
 import Logger from './lib/logger';
 import { BaseResponse } from './types';
 import { homeRouter } from './routes/home.route';
+import { foldersRouter } from './routes/folders.route';
 
 
 if (!process.env.TOKEN) throw new Error("NO TOKEN")
@@ -96,5 +97,6 @@ app.use(async function(req, res, next) {
 
 app.use('/', homeRouter);
 
+app.use('/', foldersRouter);
 
 export { app };

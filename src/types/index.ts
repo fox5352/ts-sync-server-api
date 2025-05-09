@@ -37,3 +37,9 @@ export type PathAndDec = {
 export interface HomeObj {
   routes: PathAndDec[];
 }
+
+
+export interface Folder {
+  type: string;
+  folders: string[];
+}
