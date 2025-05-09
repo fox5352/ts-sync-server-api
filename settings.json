@@ -1,0 +1,21 @@
+{
+  "allowList": [],
+  "imagePaths": [],
+  "audioPaths": [],
+  "videoPaths": [],
+  "imageExt": [
+    "jpg",
+    "png"
+  ],
+  "audioExt": [
+    "mp3"
+  ],
+  "videoExt": [
+    "mkv",
+    "mp4"
+  ],
+  "server": {
+    "host": "0.0.0.0",
+    "port": 9090
+  }
+}
