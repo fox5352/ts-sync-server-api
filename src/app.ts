@@ -9,6 +9,8 @@ import Logger from './lib/logger';
 import { BaseResponse } from './types';
 import { homeRouter } from './routes/home.route';
 import { foldersRouter } from './routes/folders.route';
+import { settingsRouter } from './routes/settings.route';
+import { filesRouter } from './routes/files.router';
 
 
 if (!process.env.TOKEN) throw new Error("NO TOKEN")
@@ -98,5 +100,9 @@ app.use(async function(req, res, next) {
 app.use('/', homeRouter);
 
 app.use('/', foldersRouter);
+
+app.use('/', settingsRouter);
+
+app.use('/', filesRouter);
 
 export { app };
