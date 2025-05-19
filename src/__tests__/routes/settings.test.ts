@@ -73,10 +73,7 @@ describe('API Test in settings route', () => {
 
     expect(data).not.toBeNull();
 
-    // expect(data?.imagePaths[0]).toMatch(testData);
 
-    console.log(testSettings)
-    console.log(data?.encryptedData)
   });
 
 })

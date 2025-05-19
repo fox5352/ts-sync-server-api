@@ -5,6 +5,8 @@ export interface ServerData {
   port: number;
 }
 
+export type FileType = "audio" | "image" | "video" | "document";
+
 export interface Settings {
   allowList: string[];
   imagePaths: string[];
@@ -27,6 +29,32 @@ export interface BaseRequest {
 
 export type Methods = 'GET' | 'POST';
 
+
+// file management
+export interface AudioMetaData {
+  duration?: number;
+  sampleRate?: number;
+}
+
+export interface ImageMetaData {
+  thumbnail?: Buffer
+}
+
+export interface FileMetaData {
+  size: number,
+  created: Date,
+  modified: Date
+  imageMetaData?: ImageMetaData
+  audioMetaData?: AudioMetaData
+}
+
+export interface FileEntry {
+  name: string,
+  path: string,
+  extension: string,
+  metaData?: FileMetaData
+}
+
 // home route
 export type PathAndDec = {
   path: string;
@@ -38,8 +66,14 @@ export interface HomeObj {
   routes: PathAndDec[];
 }
 
-
 export interface Folder {
   type: string;
   folders: string[];
+}
+
+// files route
+//
+export interface FilesData {
+  folderName: string;
+  data: FileEntry[];
 }
