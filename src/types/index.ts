@@ -77,3 +77,9 @@ export interface FilesData {
   folderName: string;
   data: FileEntry[];
 }
+
+// file route
+
+export interface DetailedFileData extends FileEntry {
+  data: Buffer;
+}

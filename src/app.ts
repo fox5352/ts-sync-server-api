@@ -11,6 +11,7 @@ import { homeRouter } from './routes/home.route';
 import { foldersRouter } from './routes/folders.route';
 import { settingsRouter } from './routes/settings.route';
 import { filesRouter } from './routes/files.router';
+import { fileRouter } from './routes/file.route';
 
 
 if (!process.env.TOKEN) throw new Error("NO TOKEN")
@@ -104,5 +105,7 @@ app.use('/', foldersRouter);
 app.use('/', settingsRouter);
 
 app.use('/', filesRouter);
+
+app.use("/", fileRouter);
 
 export { app };
